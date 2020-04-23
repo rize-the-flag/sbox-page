@@ -1,0 +1,58 @@
+.header {
+    padding: 30px 0 0;
+    background-color: @header-bgc;
+
+    .fixed-container {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
+    }
+}
+.menu {
+    display: flex;
+
+    &__link {
+        font-size: 16px;
+        font-weight: 400;
+        color: @middle-black;
+
+        &:hover {
+            transition: color 0.15s;
+            color: @link-hovered;
+            padding-bottom: 1px;
+            border-bottom: 1px solid @link-hovered;
+        }
+    }
+}
+
+.right-col {
+    &__phone {
+        margin-right: 22px;
+    }
+}
+
+.phone {
+    font-size: 25px;
+    font-weight: 700;
+    color: @middle-black;
+}
+
+
+.order-button {
+    //------@width @height @fc         @bgc  ------//
+    .button(207px, 45px, @light-pink, @pink);
+
+    &:hover {
+        transition: all 0.15s;
+        background-color: @pink;
+        color: #FFFFFF;
+    }
+}
+
+
+

@@ -1,0 +1,168 @@
+
+.intro {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 212px 0 237px;
+    background-image: url("../img/background/bg.svg");
+    background-position: 112.2% 63px;
+    background-size: 924px 764px;
+    background-repeat: no-repeat;
+    background-color: @intro-bgc;
+
+
+
+    .fixed-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__initials {
+        font-size: 80px;
+        font-weight: 900;
+
+        @media (max-width: 1400px) {
+            font-size: 54px;
+        }
+    }
+
+    &__profession {
+        color: @light-gray;
+        font-size: 25px;
+        font-weight: 400;
+        margin: 17px 0 0;
+    }
+
+    .btn-more {
+        margin: 46px 0 0;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .intro__photo {
+        position: absolute;
+        right: 15%;
+        bottom: -2%;
+
+
+        @media (max-width: 1600px) {
+            right: 6%;
+        }
+
+        @media (max-width: 1024px) {
+            right: 0%;
+        }
+    }
+
+    .flying-tag {
+
+        @startX: 30%;
+        @startY: 50%;
+        @animationStartDelay: 0.15s;
+
+        background-image: @intro-flying-tags-background;
+
+        &--div1 {
+            left: @startX;
+            top: @startY;
+            font-size: 29px;
+            animation: 1s ease-out @animationStartDelay forwards header-div1;
+        }
+
+        &--div2 {
+            left: @startX;
+            top: @startY;
+            font-size: 35px;
+            animation: 1s ease-out @animationStartDelay forwards header-div2;
+        }
+
+        &--brackets {
+            font-size: 48px;
+            left: @startX;
+            top: @startY;
+            animation: 1s ease-out @animationStartDelay forwards header-brackets;
+        }
+
+        &--slash {
+            font-size: 41px;
+            left: @startX;
+            top: @startY;
+            animation: 1s ease-out @animationStartDelay forwards header-slash;
+        }
+
+        &--grate {
+            font-size: 55px;
+            left: @startX;
+            top: @startY;
+            animation: 1s ease-out @animationStartDelay forwards header-grate;
+        }
+
+        @keyframes header-div1 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 13%;
+                left: 41%;
+                transform: rotate(-15deg);
+            }
+        }
+        @keyframes header-div2 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 67.3%;
+                left: 49.6%;
+                transform: rotate(20deg);
+            }
+        }
+        @keyframes header-brackets {
+            from {
+                top: @startY;
+                left: @startX;
+            }
+            to {
+                top: 8.58%;
+                left: 6.35%;
+                transform: rotate(30deg);
+            }
+        }
+        @keyframes header-slash {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 85.5%;
+                left: 19.3%;
+                transform: rotate(-23deg);
+            }
+        }
+        @keyframes header-grate {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 41.8%;
+                left: 12.5%;
+                transform: rotate(17deg);
+            }
+        }
+    }
+}
+
+.btn-more {
+
+    .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
+
+    &:hover {
+        transition: 0.15s;
+        background-color: transparent;
+        color: @main-button-bgc;
+    }
+}

@@ -1,0 +1,30 @@
+@import "../components/slider";
+
+.projects {
+    background-color: @proj-section-bgc;
+    padding: 90px 0 102px;
+
+    .fixed-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__slider {
+        margin-top: 100px;
+    }
+
+}
+
+.btn-order {
+    .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
+
+    font-size: 18px;
+    margin-top: 81px;
+
+    &:hover {
+        transition: 0.15s;
+        background-color: transparent;
+        color: @main-button-bgc;
+    }
+}

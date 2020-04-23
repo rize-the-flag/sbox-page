@@ -1,0 +1,140 @@
+.footer {
+
+    padding: 83px 0 0;
+
+    .fixed-container {
+        justify-content: space-between;
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__col:nth-child(2) {
+        margin-left: 7.8%;
+    }
+
+    &__col:nth-child(3) {
+        margin: -6px 22px 0 0;
+    }
+
+    .menu {
+        flex-direction: column;
+
+        &__item:not(:last-child) {
+            margin-bottom: 13px;
+        }
+
+        &__link {
+            font-size: 18px;
+            font-weight: 400;
+        }
+    }
+
+    .phone {
+        display: block;
+        font-weight: 400;
+
+        &__icon {
+            font-size: 24px;
+            margin-right: 12px;
+        }
+    }
+
+    &__mail {
+        margin-top: 31px;
+    }
+
+    .order-button {
+        .button(248px, 45px, @light-pink, @pink);
+
+        &:hover {
+            transition: all 0.15s;
+            background-color: @pink;
+            color: #FFFFFF;
+        }
+    }
+
+    &__socials {
+        margin-top: 31px;
+    }
+}
+
+.mail {
+    display: block;
+    color: #000000;
+    font-size: 25px;
+    font-weight: 400;
+
+    &__icon {
+        font-size: 24px;
+        margin-right: 12px;
+    }
+}
+
+.icon-phone:before {
+    content: "\e800";
+    .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
+}
+
+.icon-mail:before {
+    content: "\e802";
+    .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
+}
+
+.socials {
+    display: flex;
+
+    &__link {
+        display: block;
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+    }
+
+    &__icon {
+        display: block;
+        width: 35px;
+        height: 35px;
+
+        background: url(../img/icons/socials/socials_sprite.png) no-repeat;
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+
+        &--vk {
+            background-position-x: 0;
+        }
+
+        &--fb {
+            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
+            background-position-x: -55px;
+        }
+
+        &--tw {
+            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
+            background-position-x: -110px;
+        }
+
+        &--insta {
+            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
+            background-position-x: -165px;
+        }
+    }
+}
+
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    background-color: @footer-copyright-bgc;
+    width: 100%;
+    padding: 31px 0;
+    margin: 74px 0 0;
+
+    &__text {
+        color: @white;
+    }
+}
