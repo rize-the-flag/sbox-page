@@ -11,7 +11,10 @@
 <body>
 <header class="header">
     <div class="fixed-container">
-        <nav class="header-col">
+        <nav class="header-nav ">
+            <button class="burger-btn header-nav__burger-btn">
+                <span class = "burger-btn__lines "></span>
+            </button>
             <ul class="header__menu menu">
                 <li class="header__item menu__item">
                     <a href="#" class="menu__link">Услуги</a>
@@ -103,6 +106,14 @@
             </ul>
             <div class="slider__arrow slider__arrow--left"></div>
             <div class="slider__arrow slider__arrow--right"></div>
+            <div class="item-control slider__item-control">
+                <a class="item-control__dot item-control__dot--active">
+                </a>
+                <a class="item-control__dot">
+                </a>
+                <a class="item-control__dot">
+                </a>
+            </div>
         </div>
         <button class="btn-order">Заказать проект</button>
     </div>

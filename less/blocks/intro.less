@@ -11,6 +11,10 @@
     background-repeat: no-repeat;
     background-color: @intro-bgc;
 
+    @media (max-width: 1024px) {
+        padding: 238px 0 229px;
+    }
+
 
 
     .fixed-container {
@@ -32,6 +36,10 @@
         font-size: 25px;
         font-weight: 400;
         margin: 17px 0 0;
+
+        @media (max-width: 1024px){
+            margin: 22px 0 0;
+        }
     }
 
     .btn-more {
@@ -42,7 +50,7 @@
 
     .intro__photo {
         position: absolute;
-        right: 15%;
+        right: 11%;
         bottom: -2%;
 
 
@@ -51,7 +59,7 @@
         }
 
         @media (max-width: 1024px) {
-            right: 0%;
+            right: 3.8%;
         }
     }
 
@@ -159,6 +167,11 @@
 .btn-more {
 
     .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
+
+    @media (max-width: 1024px) {
+        width: 320px;
+        height: 68px;
+    }
 
     &:hover {
         transition: 0.15s;

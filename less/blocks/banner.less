@@ -55,6 +55,10 @@
             bottom: 50px;
             font-size: 50px;
             transform: rotate(-18deg);
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
         }
 
         &--grate {
@@ -62,6 +66,10 @@
             left: 237px;
             font-size: 58px;
             transform: rotate(16deg);
+            
+            @media (max-width: 1024px) {
+                display: none;
+            }
         }
 
         &--slash {
@@ -76,4 +84,8 @@
 
 .wrap-banner-text {
     padding: 74px 112px 80px;
+
+    @media (max-width: 1024px) {
+        padding: 74px 0px 80px;
+    }
 }
