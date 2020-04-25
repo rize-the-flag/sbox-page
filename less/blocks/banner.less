@@ -16,6 +16,11 @@
         font-size: 45px;
         font-weight: 700;
         line-height: 60px;
+
+        @media (max-width: @small-bp){
+            font-size: 28px;
+            line-height: 40px;
+        }
     }
 
     &__subtitle {
@@ -25,6 +30,11 @@
         font-weight: 400;
         line-height: 30px;
         margin-top: 30px;
+
+        @media (max-width: @small-bp) {
+            font-size: 15px;
+            line-height: 30px;
+        }
     }
 
     .marker {
@@ -41,6 +51,12 @@
             bottom: 20px;
             font-size: 37px;
             transform: rotate(20deg);
+
+            @media (max-width: @medium-bp) {
+                font-size: 26px;
+                right: 43.9%;
+                bottom: 8.8%;
+            }
         }
 
         &--brackets1 {
@@ -48,6 +64,12 @@
             left: 120px;
             font-size: 48px;
             transform: rotate(27deg);
+
+            @media (max-width: @medium-bp) {
+                font-size: 32px;
+                top: 5.8%;
+                left: 15.3%;
+            }
         }
 
         &--brackets2 {
@@ -56,7 +78,7 @@
             font-size: 50px;
             transform: rotate(-18deg);
 
-            @media (max-width: 1024px) {
+            @media (max-width: @medium-bp) {
                 display: none;
             }
         }
@@ -67,7 +89,7 @@
             font-size: 58px;
             transform: rotate(16deg);
             
-            @media (max-width: 1024px) {
+            @media (max-width: @medium-bp) {
                 display: none;
             }
         }
@@ -77,6 +99,11 @@
             top: 75px;
             font-size: 40px;
             transform: rotate(-22deg);
+
+            @media (max-width: @medium-bp) {
+                right: 9%;
+                top: 78.6%;
+            }
         }
     }
 
@@ -85,7 +112,11 @@
 .wrap-banner-text {
     padding: 74px 112px 80px;
 
-    @media (max-width: 1024px) {
+    @media (max-width: @medium-bp) {
         padding: 74px 0px 80px;
+    }
+
+    @media (max-width: @small-bp) {
+        padding: 42px 0 44px;
     }
 }

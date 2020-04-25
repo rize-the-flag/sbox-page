@@ -4,53 +4,16 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding: 212px 0 237px;
+    padding: 456px 0 237px;
     background-image: url("../img/background/bg.svg");
-    background-position: 112.2% 63px;
+    background-position: bottom -135px right -110px;
     background-size: 924px 764px;
     background-repeat: no-repeat;
     background-color: @intro-bgc;
 
-    @media (max-width: 1024px) {
-        padding: 238px 0 229px;
-    }
-
-
-
-    .fixed-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    &__initials {
-        font-size: 80px;
-        font-weight: 900;
-
-        @media (max-width: 1400px) {
-            font-size: 54px;
-        }
-    }
-
-    &__profession {
-        color: @light-gray;
-        font-size: 25px;
-        font-weight: 400;
-        margin: 17px 0 0;
-
-        @media (max-width: 1024px){
-            margin: 22px 0 0;
-        }
-    }
-
-    .btn-more {
-        margin: 46px 0 0;
-        font-size: 18px;
-        font-weight: 400;
-    }
-
-    .intro__photo {
+    &__photo {
         position: absolute;
-        right: 11%;
+        right: 15.3%;
         bottom: -2%;
 
 
@@ -58,7 +21,7 @@
             right: 6%;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: @medium-bp) {
             right: 3.8%;
         }
     }
@@ -83,6 +46,10 @@
             top: @startY;
             font-size: 35px;
             animation: 1s ease-out @animationStartDelay forwards header-div2;
+
+            @media (max-width: @small-bp) {
+                display: none;
+            }
         }
 
         &--brackets {
@@ -92,11 +59,31 @@
             animation: 1s ease-out @animationStartDelay forwards header-brackets;
         }
 
-        &--slash {
+        &--slash1 {
             font-size: 41px;
             left: @startX;
             top: @startY;
-            animation: 1s ease-out @animationStartDelay forwards header-slash;
+            animation: 1s ease-out @animationStartDelay forwards header-slash1;
+
+            @media (max-width: @medium-bp) {
+                font-size: 46px;
+            }
+        }
+
+        &--slash2 {
+            display: none;
+            font-size: 41px;
+            left: @startX;
+            top: @startY;
+            animation: 1s ease-out @animationStartDelay forwards header-slash2;
+
+            @media (max-width: @medium-bp) {
+                display: block;
+            }
+
+            @media (max-width: @small-bp) {
+                display: none;
+            }
         }
 
         &--grate {
@@ -139,7 +126,18 @@
                 transform: rotate(30deg);
             }
         }
-        @keyframes header-slash {
+        @keyframes header-slash1 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 85.5%;
+                left: 19.3%;
+                transform: rotate(-23deg);
+            }
+        }
+        @keyframes header-slash2 {
             from {
                 top: @startY;
                 left: @startX
@@ -162,20 +160,188 @@
             }
         }
     }
+
+    @media (max-width: @medium-bp) {
+        /*padding: 238px 0 229px;*/
+        background-position: bottom -104px right -378px;
+        background-size: 925px 630px;
+        @startY: 30%;
+        @startX: 50%;
+
+        @keyframes header-brackets {
+            from {
+                top: @startY;
+                left: @startX;
+            }
+            to {
+                top: 11.7%;
+                left: 7.5%;
+                transform: rotate(30deg);
+            }
+        }
+
+        @keyframes header-grate {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 80%;
+                left: 5.7%;
+                transform: rotate(17deg);
+            }
+        }
+
+        @keyframes header-slash2 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 72.9%;
+                left: 35.1%;
+                transform: rotate(-23deg);
+            }
+        }
+
+        @keyframes header-slash1 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 22.6%;
+                left: 41.1%;
+                transform: rotate(15deg);
+            }
+        }
+
+        @keyframes header-div1 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 10.8%;
+                left: 86.8%;
+                transform: rotate(-15deg);
+            }
+        }
+
+        @keyframes header-div2 {
+            from {
+                top: @startY;
+                left: @startX
+            }
+            to {
+                top: 67.8%;
+                left: 84.8%;
+                transform: rotate(19deg);
+            }
+        }
+    }
+
+    @media (max-width: @small-bp) {
+        padding: 414px 0 0;
+        background-position: bottom -104px right -95px;
+        background-size: 476px 398px;
+
+        &__photo {
+            width: 71.7%;
+            right: 4.5%;
+        }
+
+    }
 }
 
 .btn-more {
 
     .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
 
-    @media (max-width: 1024px) {
-        width: 320px;
-        height: 68px;
-    }
-
     &:hover {
         transition: 0.15s;
         background-color: transparent;
         color: @main-button-bgc;
+    }
+
+    @media (max-width: @medium-bp) {
+        width: 320px;
+        height: 68px;
+    }
+
+    @media (max-width: @small-bp) {
+        width: 280px;
+        height: 55px;
+    }
+}
+
+.self-intro {
+    position: absolute;
+    top: 23.5%;
+    left: 17.5%;
+
+    .fixed-container {
+        flex-direction: column;
+        align-items: flex-start;
+
+        @media (max-width: @small-bp) {
+            align-items: center;
+        }
+    }
+
+    &__initials {
+        font-size: 80px;
+        font-weight: 900;
+
+        @media (max-width: 1400px) {
+            font-size: 54px;
+        }
+
+        @media (max-width: @small-bp) {
+            font-size: 30px;
+            font-weight: 700;
+        }
+    }
+
+    &__profession {
+        color: @light-gray;
+        font-size: 25px;
+        font-weight: 400;
+        margin: 17px 0 0;
+
+        @media (max-width: @medium-bp) {
+            margin: 22px 0 0;
+        }
+
+        @media (max-width: @small-bp) {
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            margin: 8px 0 0;
+        }
+    }
+
+    .btn-more {
+        margin: 44px 0 0;
+        font-size: 18px;
+        font-weight: 400;
+
+        @media (max-width: @small-bp){
+            font-size: 16px;
+            margin: 22px 0 0;
+        }
+    }
+
+    @media (max-width: 1690px) {
+        left: 0;
+    }
+
+    @media (max-width: @medium-bp) {
+        top: 38.8%;
+    }
+
+    @media (max-width: @small-bp) {
+        position: static;
+        margin-top: 15px;
     }
 }

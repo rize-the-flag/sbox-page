@@ -4,6 +4,11 @@
 
     .fixed-container {
         justify-content: space-between;
+
+        @media (max-width: @small-bp) {
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
     }
 
     &__col {
@@ -13,22 +18,46 @@
 
     &__col:nth-child(2) {
         margin-left: 7.8%;
+
+        @media (max-width:  @medium-bp) {
+            margin-left: 5.8%;
+        }
+
+        @media (max-width: @small-bp) {
+            margin: 44px 0 0;
+        }
     }
 
     &__col:nth-child(3) {
         margin: -6px 22px 0 0;
+
+        @media (max-width:  @medium-bp) {
+            margin: -6px 0 0;
+        }
+
+        @media (max-width: @small-bp) {
+            margin: 23px 0 0;
+        }
     }
 
     .menu {
         flex-direction: column;
 
         &__item:not(:last-child) {
-            margin-bottom: 13px;
+            margin: 0 0 13px;
+
+            @media (max-width:  @small-bp){
+                margin: 0 0 14px;
+            }
         }
 
         &__link {
             font-size: 18px;
             font-weight: 400;
+
+            @media (max-width: @small-bp) {
+                font-size: 15px;
+            }
         }
     }
 
@@ -39,11 +68,26 @@
         &__icon {
             font-size: 24px;
             margin-right: 12px;
+
+            @media (max-width:  @small-bp) {
+                font-size: 18px;
+                margin-right: 14px;
+            }
+        }
+
+        &__text {
+            @media (max-width: @small-bp){
+                font-size: 20px;
+            }
         }
     }
 
     &__mail {
-        margin-top: 31px;
+        margin: 31px 0 0;
+
+        @media (max-width: @small-bp) {
+            margin: 19px 0 0;
+        }
     }
 
     .order-button {
@@ -54,10 +98,28 @@
             background-color: @pink;
             color: #FFFFFF;
         }
+
+        @media (max-width: @small-bp) {
+            display: block;
+            width: 280px;
+            height: 55px;
+        }
     }
 
     &__socials {
-        margin-top: 31px;
+        margin: 31px 0 0;
+
+        @media (max-width: @small-bp) {
+            margin: 50px 0 0;
+        }
+    }
+
+    @media (max-width: @medium-bp) {
+        padding: 105px 0 0;
+    }
+
+    @media (max-width: @small-bp) {
+        padding: 46px 0 0;
     }
 }
 
@@ -70,6 +132,16 @@
     &__icon {
         font-size: 24px;
         margin-right: 12px;
+
+        @media (max-width: @small-bp) {
+            font-size: 18px;
+        }
+    }
+
+    &__text {
+        @media (max-width: @small-bp) {
+            font-size: 20px;
+        }
     }
 }
 
@@ -136,5 +208,14 @@
 
     &__text {
         color: @white;
+
+        @media (max-width: @small-bp) {
+            font-size: 12px;
+        }
+    }
+
+    @media (max-width: @small-bp) {
+        padding: 18px 0;
+        margin: 44px 0 0;
     }
 }

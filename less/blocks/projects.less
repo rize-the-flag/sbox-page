@@ -11,7 +11,15 @@
     }
 
     &__slider {
-        margin-top: 100px;
+        margin: 100px 0 0;
+
+        @media (max-width: @small-bp) {
+            margin: 43px 0 0;
+        }
+    }
+
+    @media (max-width: @small-bp) {
+        padding: 94px 0 51px;
     }
 
 }
@@ -20,7 +28,7 @@
     .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
 
     font-size: 18px;
-    margin-top: 81px;
+    margin-top: 80px;
 
     &:hover {
         transition: 0.15s;
@@ -28,9 +36,16 @@
         color: @main-button-bgc;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: @medium-bp) {
         width: 320px;
         height: 68px;
-        margin-top: 100px;
+        margin: 100px 0 0;
+    }
+
+    @media (max-width: @small-bp) {
+        width: 280px;
+        height: 55px;
+        margin: 50px 0 0;
+        font-size: 16px;
     }
 }

@@ -38,4 +38,8 @@ button {
     height: 100%;
     margin: 0 auto;
     .calcContainerWidth(@container-width, @container-padding);
+
+    @media (max-width: @small-bp){
+        padding: 0 @container-mobile-padding;
+    }
 }

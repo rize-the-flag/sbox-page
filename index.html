@@ -11,11 +11,11 @@
 <body>
 <header class="header">
     <div class="fixed-container">
-        <nav class="header-nav ">
+        <nav class="header-nav">
             <button class="burger-btn header-nav__burger-btn">
-                <span class = "burger-btn__lines "></span>
+                <span class="burger-btn__lines "></span>
             </button>
-            <ul class="header__menu menu">
+            <ul class="menu">
                 <li class="header__item menu__item">
                     <a href="#" class="menu__link">Услуги</a>
                 </li>
@@ -31,21 +31,28 @@
             <a href="tel:+74999955577" class="right-col__phone phone">+7 (499) 995-55-77</a>
             <button class="order-button">Заказать звонок</button>
         </div>
+        <div class="wrap-phone-btn">
+            <button class="phone-btn">
+                <i class="icon-phone phone-btn__icon"></i>
+            </button>
+        </div>
     </div>
 </header>
 <section class="intro">
-    <div class="fixed-container">
-        <h1 class="intro__initials">Дмитрий Алексеев</h1>
-        <p class="intro__profession">Frontend-разработчик и веб-верстальщик </p>
-        <button class="btn-more">Узнать больше</button>
-    </div>
     <img src="./build/img/man_photo.png" alt="my photo" class="intro__photo">
-
     <div class="flying-tag flying-tag--div1 ">&lt;div&gt;</div>
     <div class="flying-tag flying-tag--div2">&lt;div&gt;</div>
     <div class="flying-tag flying-tag--brackets">{ }</div>
-    <div class="flying-tag flying-tag--slash">&lt;/&gt;</div>
+    <div class="flying-tag flying-tag--slash1">&lt;/&gt;</div>
+    <div class="flying-tag flying-tag--slash2">&lt;/&gt;</div>
     <div class="flying-tag flying-tag--grate">#</div>
+</section>
+<section class="self-intro">
+    <div class="fixed-container">
+        <h1 class="self-intro__initials">Дмитрий Алексеев</h1>
+        <p class="self-intro__profession">Frontend-разработчик и веб-верстальщик </p>
+        <button class="btn-more">Узнать больше</button>
+    </div>
 </section>
 <section class="about">
     <div class="fixed-container">
@@ -82,25 +89,25 @@
                 <li class="slider__item">
                     <a href="#" class="slider__link">
                         <img src="./build/img/slider/slider_item_1.png" alt="" class="slider__image">
-                        Сайт психолога Веры Антоновой
+                        <span class="slider__text">Сайт психолога Веры Антоновой</span>
                     </a>
                 </li>
                 <li class="slider__item">
                     <a href="#" class="slider__link">
                         <img src="./build/img/slider/slider_item_2.png" alt="" class="slider__image">
-                        Сайт магазина детской одежды
+                        <span class="slider__text">Сайт магазина детской одежды</span>
                     </a>
                 </li>
                 <li class="slider__item">
                     <a href="#" class="slider__link">
                         <img src="./build/img/slider/slider_item_3.png" alt="" class="slider__image">
-                        Сайт магазина «Рыболов»
+                        <span class="slider__text">Сайт магазина «Рыболов»</span>
                     </a>
                 </li>
                 <li class="slider__item">
                     <a href="#" class="slider__link">
                         <img src="./build/img/slider/slider_item_3.png" alt="" class="slider__image">
-                        Сайт магазина «Рыболов»
+                        <span class="slider__text">Сайт магазина «Рыболов»</span>
                     </a>
                 </li>
             </ul>
@@ -123,12 +130,17 @@
     <div class="fixed-container">
         <div class="wrap-banner-text">
             <h3 class="banner__title">
-                Адаптивная вёрстка под все устройства
-                и&nbsp;браузеры от 1000 рублей всего за 4 часа.*
+                Адаптивная вёрстка
+                под все устройства
+                и&nbsp;браузеры от 1000
+                рублей всего за&nbsp;4&nbsp;часа.*
             </h3>
             <p class="banner__subtitle">
                 <span class="marker">*</span>
-                <span class="text">Срок и стоимость могут отличаться от заявленных и рассчитываются  &nbsp;индивидуально, в&nbsp;зависимости&nbsp;от&nbsp;сложности&nbsp;задач.</span>
+                <span class="text">Срок и стоимость могут отличаться
+    от заявленных и рассчитываются
+    индивидуально, в зависимости
+    от сложности задач.</span>
             </p>
         </div>
     </div>
@@ -166,7 +178,7 @@
         </div>
 
         <div class="footer__col">
-            <button class="order-button">
+            <button class="footer__order-button order-button">
                 Заказать звонок
             </button>
 

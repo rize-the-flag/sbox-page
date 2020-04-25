@@ -12,6 +12,10 @@
             margin-right: 32px;
         }
     }
+
+    @media (max-width: @small-bp) {
+        padding: 26px 0 0;
+    }
 }
 
 .burger-btn {
@@ -30,33 +34,68 @@
         position: absolute;
         width: 100%;
         height: 5px;
+
+        @media (max-width: @small-bp) {
+            height: 2px;
+        }
     }
 
     &__lines {
         background: @first-line-gradient;
-        &:after{
+
+        &:after {
+            content: "";
+            top: 26px;
+            left: 0;
+            background: @third-line-gradient;
+        }
+
+        &:before {
             content: "";
             top: 13px;
             left: 0;
             background: @second-line-gradient;
         }
 
-        &:before{
-            content: "";
-            bottom: -26px;
-            left: 0;
-            background: @third-line-gradient;
+        @media (max-width: @small-bp) {
+            &:after {
+                top: 16px;
+            }
+            &:before{
+                top: 8px;
+            }
         }
+    }
+
+    @media (max-width: @small-bp) {
+        width: 24px;
+        height: 18px;
     }
 }
 
 .header-nav {
+    position: relative;
 
     &__burger-btn {
         display: none;
 
-        @media (max-width: 1024px) {
+        @media (max-width: @medium-bp) {
             display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .menu {
+        @media (max-width: @medium-bp) {
+            display: none;
+            position: absolute;
+            flex-direction: column;
+            z-index: 99;
+            background-color: #eee;
+
+            &__item {
+                margin: 10px 0;
+            }
         }
     }
 }
@@ -76,16 +115,15 @@
             border-bottom: 1px solid @link-hovered;
         }
     }
-
-    @media (max-width: 1024px) {
-        display: none;
-        flex-direction: column;
-    }
 }
 
 .right-col {
     &__phone {
         margin-right: 22px;
+
+        @media (max-width: @small-bp) {
+            margin-right: 0;
+        }
     }
 }
 
@@ -93,6 +131,10 @@
     font-size: 25px;
     font-weight: 700;
     color: @middle-black;
+
+    @media (max-width: @small-bp) {
+        font-size: 18px;
+    }
 }
 
 
@@ -105,6 +147,30 @@
         background-color: @pink;
         color: #FFFFFF;
     }
+
+    @media (max-width:  320px) {
+        display: none;
+    }
+}
+
+.wrap-phone-btn {
+    display: none;
+    position: relative;
+    background: @border-gradient-color;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    @media (max-width: @small-bp) {
+        display: block;
+    }
+}
+
+.phone-btn {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    padding: 0;
+    background-color: @header-bgc;
+    border-radius: 50%;
 }
 
 
