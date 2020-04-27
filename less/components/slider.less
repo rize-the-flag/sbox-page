@@ -6,7 +6,7 @@
     @itemMarginRightMediumScreen: 40px;
     @itemCountMediumScreen: 2;
 
-    @itemMarginRightSmallScreen: 0px;
+    @itemMarginRightSmallScreen: 10px;
     @itemCountSmallScreen: 1;
 
     width: 100%;
@@ -21,6 +21,7 @@
         flex: 0 0 calc((100% / @itemCount) - (@itemMarginRight * (@itemCount - 1)) / @itemCount);
         margin-right: @itemMarginRight;
         overflow: hidden;
+        transition: transform 0.5s;
 
         &:last-child {
             margin-right: 0;
@@ -34,7 +35,9 @@
         @media (max-width: @small-bp) {
             flex: 0 0 calc((100% / @itemCountSmallScreen) - (@itemMarginRightSmallScreen * (@itemCountSmallScreen - 1)) / @itemCountSmallScreen);
             margin-right: @itemMarginRightSmallScreen;
-            transform: translateX(-280px);
+        }
+        @media (max-width: 320px) {
+            transform: translateX(-290px);
         }
     }
 
@@ -69,10 +72,14 @@
     &__image {
         width: 100%;
 
-        @media (max-width: @small-bp) {
+        @media (max-width: 320px) {
             width: 112%;
             margin: 2% 0 0 -7%;
         }
+    }
+
+    &__text {
+        display: block;
     }
 
     &__arrow {
@@ -110,7 +117,7 @@
             display: flex;
         }
         @media (max-width: @small-bp) {
-            margin: 38px 0 0;
+            margin: 5px 0 0;
         }
     }
 }

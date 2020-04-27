@@ -35,7 +35,7 @@ function compileCss() {
 
 function compileJs() {
     return gulp.src( './js/**/*.js' )
-        .pipe( jsmin() )
+        /*.pipe( jsmin() )*/
         .pipe( rename( { suffix: '.min' } ) )
         .pipe( gulp.dest( './build/js/' ) )
         .pipe( browserSync.stream() );

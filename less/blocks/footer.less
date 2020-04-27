@@ -4,9 +4,15 @@
 
     .fixed-container {
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media (max-width: @medium-bp) {
+            align-content: center;
+        }
 
         @media (max-width: @small-bp) {
             flex-wrap: wrap;
+            flex-direction: column;
             justify-content: flex-start;
         }
     }
@@ -46,7 +52,7 @@
         &__item:not(:last-child) {
             margin: 0 0 13px;
 
-            @media (max-width:  @small-bp){
+            @media (max-width: 800px){
                 margin: 0 0 14px;
             }
         }
@@ -55,7 +61,7 @@
             font-size: 18px;
             font-weight: 400;
 
-            @media (max-width: @small-bp) {
+            @media (max-width: 800px) {
                 font-size: 15px;
             }
         }
@@ -69,14 +75,14 @@
             font-size: 24px;
             margin-right: 12px;
 
-            @media (max-width:  @small-bp) {
+            @media (max-width:  800px) {
                 font-size: 18px;
                 margin-right: 14px;
             }
         }
 
         &__text {
-            @media (max-width: @small-bp){
+            @media (max-width: 800px){
                 font-size: 20px;
             }
         }
@@ -85,7 +91,7 @@
     &__mail {
         margin: 31px 0 0;
 
-        @media (max-width: @small-bp) {
+        @media (max-width: 800px) {
             margin: 19px 0 0;
         }
     }
@@ -133,13 +139,13 @@
         font-size: 24px;
         margin-right: 12px;
 
-        @media (max-width: @small-bp) {
+        @media (max-width: 800px) {
             font-size: 18px;
         }
     }
 
     &__text {
-        @media (max-width: @small-bp) {
+        @media (max-width: 800px) {
             font-size: 20px;
         }
     }

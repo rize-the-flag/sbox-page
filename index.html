@@ -6,16 +6,27 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="build/css/style.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="build/js/slider.min.js"></script>
+    <script src="build/js/menu.min.js"></script>
+    <script src="build/js/popup.min.js"></script>
     <title>Дмитрий Алексеев</title>
 </head>
 <body>
+
+<div class="overlay" id="callback-form-overlay">
+    <div class="popup-window">
+    </div>
+</div>
+
 <header class="header">
     <div class="fixed-container">
         <nav class="header-nav">
             <button class="burger-btn header-nav__burger-btn">
                 <span class="burger-btn__lines "></span>
             </button>
-            <ul class="menu">
+            <ul class="menu header-nav__menu">
                 <li class="header__item menu__item">
                     <a href="#" class="menu__link">Услуги</a>
                 </li>
@@ -29,10 +40,16 @@
         </nav>
         <div class="right-col">
             <a href="tel:+74999955577" class="right-col__phone phone">+7 (499) 995-55-77</a>
-            <button class="order-button">Заказать звонок</button>
+            <button class="order-button"
+                    data-form-preview = "short"
+                    data-target="#callback-form-overlay"
+                    data-action="showModal">Заказать звонок</button>
         </div>
         <div class="wrap-phone-btn">
-            <button class="phone-btn">
+            <button class="phone-btn"
+                    data-form-preview = "short"
+                    data-target="#callback-form-overlay"
+                    data-action="showModal">
                 <i class="icon-phone phone-btn__icon"></i>
             </button>
         </div>
@@ -51,7 +68,11 @@
     <div class="fixed-container">
         <h1 class="self-intro__initials">Дмитрий Алексеев</h1>
         <p class="self-intro__profession">Frontend-разработчик и веб-верстальщик </p>
-        <button class="btn-more">Узнать больше</button>
+        <button class="btn-more"
+                data-target="#callback-form-overlay"
+                data-action="showModal">
+            Узнать больше
+        </button>
     </div>
 </section>
 <section class="about">
@@ -78,7 +99,9 @@
                 <a class="item-about__text">Исправление и доработка существующей вёрстки</a>
             </div>
         </div>
-        <button class="btn-cost">Узнать стоимость</button>
+        <button class="btn-cost"
+                data-target="#callback-form-overlay"
+                data-action="showModal">Узнать стоимость</button>
     </div>
 </section>
 <section class="projects">
@@ -88,25 +111,19 @@
             <ul class="slider__view-area">
                 <li class="slider__item">
                     <a href="#" class="slider__link">
-                        <img src="./build/img/slider/slider_item_1.png" alt="" class="slider__image">
+                        <img src="./build/img/slider/slider_item_1.png" alt="site preview" class="slider__image">
                         <span class="slider__text">Сайт психолога Веры Антоновой</span>
                     </a>
                 </li>
                 <li class="slider__item">
                     <a href="#" class="slider__link">
-                        <img src="./build/img/slider/slider_item_2.png" alt="" class="slider__image">
-                        <span class="slider__text">Сайт магазина детской одежды</span>
+                        <img src="./build/img/slider/slider_item_2.png" alt="site preview" class="slider__image">
+                        <span class="slider__text">Интернет-магазин детской одежды</span>
                     </a>
                 </li>
                 <li class="slider__item">
                     <a href="#" class="slider__link">
-                        <img src="./build/img/slider/slider_item_3.png" alt="" class="slider__image">
-                        <span class="slider__text">Сайт магазина «Рыболов»</span>
-                    </a>
-                </li>
-                <li class="slider__item">
-                    <a href="#" class="slider__link">
-                        <img src="./build/img/slider/slider_item_3.png" alt="" class="slider__image">
+                        <img src="./build/img/slider/slider_item_3.png" alt="site preview" class="slider__image">
                         <span class="slider__text">Сайт магазина «Рыболов»</span>
                     </a>
                 </li>
@@ -114,15 +131,12 @@
             <div class="slider__arrow slider__arrow--left"></div>
             <div class="slider__arrow slider__arrow--right"></div>
             <div class="item-control slider__item-control">
-                <a class="item-control__dot item-control__dot--active">
-                </a>
-                <a class="item-control__dot">
-                </a>
-                <a class="item-control__dot">
-                </a>
+
             </div>
         </div>
-        <button class="btn-order">Заказать проект</button>
+        <button class="btn-order"
+                data-target="#callback-form-overlay"
+                data-action="showModal">Заказать проект</button>
     </div>
 </section>
 <section class="banner">
@@ -178,9 +192,10 @@
         </div>
 
         <div class="footer__col">
-            <button class="footer__order-button order-button">
-                Заказать звонок
-            </button>
+            <button class="footer__order-button order-button"
+                    data-form-preview = "short"
+                    data-target="#callback-form-overlay"
+                    data-action="showModal">Заказать звонок</button>
 
             <div class="socials footer__socials">
                 <a href="#" class="socials__icon socials__icon--vk">
