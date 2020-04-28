@@ -30,7 +30,7 @@ $( document ).ready( function () {
         popup.html( callbackFormFull );
 
         if ( formType === 'short' ) {
-            popup.find( '.callback-form__phone' ).css( 'display', 'none' );
+            popup.find( '.callback-form__mail' ).css( 'display', 'none' );
         }
 
         $( target ).fadeIn();
