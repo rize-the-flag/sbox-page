@@ -2,9 +2,9 @@ $( document ).ready( function () {
 
     let startX;
     let endX;
-
     let dotsArray;
     let sliderDot = `<a class="item-control__dot"></a>`;
+    let isRunning = false;
 
     const sliderItemControl = $( '.slider__item-control' );
     const controllLeft = $( '.slider__arrow--left' );
@@ -18,7 +18,9 @@ $( document ).ready( function () {
 
     let slideXThreshold = 150;
     const autoSlideDelay = 3000;
+    const userInputDelay = 2000;
     let currentPosition = 0;
+    let autoSlider;
 
     initDotsControl();
 
@@ -28,8 +30,7 @@ $( document ).ready( function () {
     } );
 
     sliderViewArea.on( 'touchstart', evt => {
-  /*      evt.preventDefault();
-        evt.stopPropagation();*/
+        stopAutoSlider();
         startX = evt.changedTouches[ 0 ].clientX;
     } );
 
@@ -42,16 +43,20 @@ $( document ).ready( function () {
                 slide( 'right' );
             }
         }
+        setTimeout( runAutoSlider, userInputDelay );
     } );
 
     controllLeft.on( 'click', ( evt ) => {
+        stopAutoSlider();
         slide( 'left' );
+        setTimeout( runAutoSlider, userInputDelay );
     } );
 
     controllRight.on( 'click', ( evt ) => {
+        stopAutoSlider();
         slide( 'right' );
+        setTimeout( runAutoSlider, userInputDelay );
     } );
-
 
     function slide( direction ) {
         viewAreaWidth = $( '.slider__view-area' ).width();
@@ -82,13 +87,11 @@ $( document ).ready( function () {
     }
 
     function initDotsControl() {
-        /*if ( sliderItemControl.is( ':visible' ) ) {*/
         for ( let i = 0; i < sliderItems.length; i++ ) {
             sliderItemControl.append( sliderDot );
         }
         dotsArray = $( '.item-control__dot' );
         flashDot( 'left' );
-        /*}*/
     }
 
     function flashDot( direction ) {
@@ -98,8 +101,21 @@ $( document ).ready( function () {
         $( dotsArray[ currentPosition ] ).addClass( 'item-control__dot--active' );
     }
 
-    const autoSlider = setInterval( () => {
-        slide( 'left' );
-    }, autoSlideDelay );
+    function runAutoSlider() {
+        if ( isRunning === false ) {
+            autoSlider = setInterval( () => {
+                slide( 'left' );
+            }, autoSlideDelay );
+            isRunning = true;
+        }
+    }
+
+
+function stopAutoSlider() {
+    isRunning = false;
+    clearInterval( autoSlider );
+}
+
+runAutoSlider();
 } );
 
