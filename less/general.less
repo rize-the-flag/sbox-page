@@ -9,6 +9,13 @@
 html, body {
     margin: 0;
     padding: 0;
+    position: relative;
+
+    .modal-open {
+        @media (max-width: 1024px) {
+            overflow: hidden;
+        }
+    }
 }
 
 ul {
@@ -28,6 +35,7 @@ p, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
+
 button {
     .button-clean-styles();
 }
@@ -39,7 +47,7 @@ button {
     margin: 0 auto;
     .calcContainerWidth(@container-width, @container-padding);
 
-    @media (max-width: @small-bp){
+    @media (max-width: @small-bp) {
         padding: 0 @container-mobile-padding;
     }
 }

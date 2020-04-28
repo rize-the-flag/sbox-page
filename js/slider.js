@@ -3,7 +3,7 @@ $( document ).ready( function () {
     let startX;
     let endX;
 
-    /*item-control__dot--active*/
+    let dotsArray;
     let sliderDot = `<a class="item-control__dot"></a>`;
 
     const sliderItemControl = $( '.slider__item-control' );
@@ -11,11 +11,12 @@ $( document ).ready( function () {
     const controllRight = $( '.slider__arrow--right' );
     const sliderItems = $( '.slider__item' );
     const sliderViewArea = $( '.slider__view-area' );
+
     let viewAreaWidth = sliderViewArea.width();
     let itemWidth = sliderItems.outerWidth( true );
     let maxScrollCount = Math.floor( sliderItems.length - viewAreaWidth / sliderItems.outerWidth( true ) );
-    let dotsArray;
 
+    let slideXThreshold = 150;
     const autoSlideDelay = 3000;
     let currentPosition = 0;
 
@@ -27,17 +28,19 @@ $( document ).ready( function () {
     } );
 
     sliderViewArea.on( 'touchstart', evt => {
-        evt.preventDefault();
-        evt.stopPropagation();
+  /*      evt.preventDefault();
+        evt.stopPropagation();*/
         startX = evt.changedTouches[ 0 ].clientX;
     } );
 
     sliderViewArea.on( 'touchend', evt => {
         endX = evt.changedTouches[ 0 ].clientX;
-        if ( endX < startX ) {
-            slide( 'left' );
-        } else {
-            slide( 'right' );
+        if ( Math.abs( startX - endX ) > slideXThreshold ) {
+            if ( endX < startX ) {
+                slide( 'left' );
+            } else {
+                slide( 'right' );
+            }
         }
     } );
 
@@ -82,11 +85,11 @@ $( document ).ready( function () {
 
     function initDotsControl() {
         /*if ( sliderItemControl.is( ':visible' ) ) {*/
-            for ( let i = 0; i < sliderItems.length; i++ ) {
-                sliderItemControl.append( sliderDot );
-            }
-            dotsArray = $( '.item-control__dot' );
-            flashDot( 'left' );
+        for ( let i = 0; i < sliderItems.length; i++ ) {
+            sliderItemControl.append( sliderDot );
+        }
+        dotsArray = $( '.item-control__dot' );
+        flashDot( 'left' );
         /*}*/
     }
 
