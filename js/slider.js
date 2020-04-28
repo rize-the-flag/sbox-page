@@ -110,12 +110,11 @@ $( document ).ready( function () {
         }
     }
 
+    function stopAutoSlider() {
+        isRunning = false;
+        clearInterval( autoSlider );
+    }
 
-function stopAutoSlider() {
-    isRunning = false;
-    clearInterval( autoSlider );
-}
-
-runAutoSlider();
+    runAutoSlider();
 } );
 
