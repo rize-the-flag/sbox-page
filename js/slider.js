@@ -45,11 +45,11 @@ $( document ).ready( function () {
     } );
 
     controllLeft.on( 'click', ( evt ) => {
-        currentPosition = slide( 'left' );
+        slide( 'left' );
     } );
 
     controllRight.on( 'click', ( evt ) => {
-        currentPosition = slide( 'right' );
+        slide( 'right' );
     } );
 
 
@@ -79,9 +79,7 @@ $( document ).ready( function () {
             }
             flashDot( 'right' );
         }
-
     }
-
 
     function initDotsControl() {
         /*if ( sliderItemControl.is( ':visible' ) ) {*/
@@ -99,7 +97,6 @@ $( document ).ready( function () {
         } );
         $( dotsArray[ currentPosition ] ).addClass( 'item-control__dot--active' );
     }
-
 
     const autoSlider = setInterval( () => {
         slide( 'left' );
