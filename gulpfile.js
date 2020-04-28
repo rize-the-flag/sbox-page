@@ -23,7 +23,7 @@ function compileCss() {
     return gulp.src( './less/style.less' )
         .pipe(srcMap.init())
         .pipe( less() ).on( 'error', notify.onError() )
-        /*.pipe( cssmin() )*/
+        .pipe( cssmin() )
         .pipe( autoprefixer( {
             cascade: false,
         } ) )
