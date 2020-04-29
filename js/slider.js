@@ -1,7 +1,7 @@
 $( document ).ready( function () {
 
-    let startX;
-    let endX;
+    let startX = 0;
+    let endX = 0;
     let dotsArray;
     let sliderDot = `<a class="item-control__dot"></a>`;
     let isRunning = false;
@@ -46,13 +46,13 @@ $( document ).ready( function () {
         setTimeout( runAutoSlider, userInputDelay );
     } );
 
-    controllLeft.on( 'click', ( evt ) => {
+    controllLeft.on( 'click', ( ) => {
         stopAutoSlider();
         slide( 'left' );
         setTimeout( runAutoSlider, userInputDelay );
     } );
 
-    controllRight.on( 'click', ( evt ) => {
+    controllRight.on( 'click', ( ) => {
         stopAutoSlider();
         slide( 'right' );
         setTimeout( runAutoSlider, userInputDelay );
@@ -94,7 +94,7 @@ $( document ).ready( function () {
         flashDot( 'left' );
     }
 
-    function flashDot( direction ) {
+    function flashDot( ) {
         dotsArray.each( function () {
             $( this ).removeClass( 'item-control__dot--active' );
         } );
