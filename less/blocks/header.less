@@ -2,14 +2,39 @@
     padding: 30px 0 0;
     background-color: @header-bgc;
 
-    .fixed-container {
+    &__wrapper {
         justify-content: space-between;
         align-items: center;
+        position: relative;
     }
 
-    &__item {
-        &:not(:last-child) {
-            margin-right: 32px;
+    &__menu {
+        margin-right: auto;
+    }
+
+    &__toggle {
+        display: none;
+        margin-right: auto;
+
+        @media (max-width: @medium-bp) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: @small-bp) {
+            margin-right: 0;
+        }
+    }
+
+    &__phone {
+        font-size: 25px;
+        font-weight: 700;
+        color: @middle-black;
+        margin-right: 29px;
+
+        @media (max-width: @small-bp) {
+            font-size: 18px;
+            margin-right: 0;
         }
     }
 
@@ -18,7 +43,7 @@
     }
 }
 
-.burger-btn {
+.btn-toggle {
     @first-line-gradient: linear-gradient(13deg, #FF4886 3%, #FF2F96 100%);
     @second-line-gradient: linear-gradient(13deg, #FF756A 20%, #FF428A 100%);
     @third-line-gradient: linear-gradient(13deg, #FF8F5A 3%, #FF726C 100%);
@@ -81,7 +106,7 @@
             top: 13px;
             transform: rotate(45deg);
 
-            @media (max-width: @small-bp){
+            @media (max-width: @small-bp) {
                 top: 8px
             }
         }
@@ -92,47 +117,11 @@
     }
 }
 
-.header-nav {
-    position: relative;
-
-    &__burger-btn {
-        display: none;
-
-        @media (max-width: @medium-bp) {
-            display: flex;
-            flex-direction: column;
-        }
-    }
-
-    .menu {
-
-        @media (max-width: @medium-bp) {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            flex-direction: column;
-            min-width: 280px;
-            max-width: 320px;
-            z-index: 99;
-            background-color: #F5F5F5;
-            box-shadow: 0 0 10px 0px #0002;
-
-
-            &__item {
-                margin: 10px 0;
-                padding: 5px 20px;
-            }
-
-            &--opened {
-                display: flex;
-            }
-        }
-    }
-}
-
 .menu {
-    display: flex;
+
+    &__list {
+        display: flex;
+    }
 
     &__link {
         font-size: 16px;
@@ -146,30 +135,39 @@
             border-bottom: 1px solid @link-hovered;
         }
     }
-}
 
-.right-col {
-    &__phone {
-        margin-right: 22px;
+    &__item {
+        &:not(:last-child) {
+            margin-right: 32px;
+        }
 
-        @media (max-width: @small-bp) {
-            margin-right: 0;
+        @media (max-width: @medium-bp) {
+            margin: 10px 0;
+            padding: 5px 20px;
+        }
+    }
+
+    @media (max-width: @medium-bp) {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        flex-direction: column;
+        min-width: 280px;
+        max-width: 320px;
+        z-index: 99;
+        background-color: #F5F5F5;
+        box-shadow: 0 0 10px 0px #0002;
+
+        &--opened {
+            display: flex;
         }
     }
 }
 
-.phone {
-    font-size: 25px;
-    font-weight: 700;
-    color: @middle-black;
 
-    @media (max-width: @small-bp) {
-        font-size: 18px;
-    }
-}
+.button-call {
 
-
-.order-button {
     //------@width @height @fc         @bgc  ------//
     .button(207px, 45px, @light-pink, @pink);
 
@@ -179,30 +177,17 @@
         color: #FFFFFF;
     }
 
-    @media (max-width: @small-bp) {
-        display: none;
+    &--icon {
+        @media (max-width: @small-bp) {
+            font-size: 0;
+            width: 26px;
+            height: 26px;
+            cursor: pointer;
+            padding: 0;
+            border: none;
+            background: url(../img/icons/buttons/call-icon.png) center/contain no-repeat;
+        }
     }
 }
-
-.wrap-phone-btn {
-    display: none;
-    position: relative;
-    background: @border-gradient-color;
-    border-radius: 50%;
-    border: 1px solid transparent;
-    @media (max-width: @small-bp) {
-        display: block;
-    }
-}
-
-.phone-btn {
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    padding: 0;
-    background-color: @header-bgc;
-    border-radius: 50%;
-}
-
 
 
