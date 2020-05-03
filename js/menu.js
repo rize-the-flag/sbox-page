@@ -1,21 +1,21 @@
 $(document).ready(function(){
     const openPostfix = '--opened';
-    const menu = $('.header-nav__menu');
-    const menuButton = $('.burger-btn');
+    const menu = $('.header__menu');
+    const menuButton = $('.btn-toggle');
 
     menuButton.click(function(){
         if (menu.is(':visible')){
             menu.slideUp(300,()=>{
-                menuButton.removeClass('burger-btn' + openPostfix);
+                menuButton.removeClass('btn-toggle' + openPostfix);
                 menu.css({'display': ''})
-                menu.removeClass('menu--opened');
+                menu.removeClass('header__menu--opened');
             });
         }
         else {
             menu.slideDown(300,()=>{
-                menuButton.addClass('burger-btn' + openPostfix);
+                menuButton.addClass('btn-toggle' + openPostfix);
                 menu.css({'display': ''})
-                menu.addClass('menu--opened');
+                menu.addClass('header__menu--opened');
             });
         }
     })
