@@ -24,8 +24,8 @@
         &--div1 {
             left: @startX;
             top: @startY;
-            font-size: 37px;
-            animation: 1s ease-out @animationStartDelay forwards header-div1 paused;
+            font-size: 29px;
+            animation: 1s ease-in-out @animationStartDelay forwards header-div1 paused;
 
             @media (max-width: 1024px) {
                 font-size: 28px;
@@ -38,8 +38,8 @@
         &--div2 {
             left: @startX;
             top: @startY;
-            font-size: 28px;
-            animation: 1s ease-out @animationStartDelay forwards header-div2 paused;
+            font-size: 36px;
+            animation: 1s linear @animationStartDelay forwards header-div2 paused;
 
             @media (max-width: 1024px) {
                 font-size: 37px;
@@ -115,14 +115,23 @@
             }
         }
         @keyframes header-div2 {
-            from {
+            0% {
                 top: @startY;
                 left: @startX
             }
-            to {
+            25% {
+                transform: rotate(90deg);
+             }
+            50% {
+                transform: rotate(180deg);
+            }
+            75%{
+                transform: rotate(270deg);
+            }
+            100% {
                 top: 67.3%;
                 left: 49.6%;
-                transform: rotate(20deg);
+                transform: rotate(380deg);
             }
         }
         @keyframes header-brackets {
@@ -132,7 +141,7 @@
             }
             to {
                 top: 8.58%;
-                left: 6.35%;
+                left: 6.8%;
                 transform: rotate(30deg);
             }
         }
@@ -164,8 +173,8 @@
                 left: @startX
             }
             to {
-                top: 41.8%;
-                left: 12.5%;
+                top: 41.7%;
+                left: 12.7%;
                 transform: rotate(17deg);
             }
         }
