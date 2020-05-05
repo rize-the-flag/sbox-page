@@ -67,11 +67,11 @@
         }
     }
 
-    .phone {
+    &__phone {
         display: block;
         font-weight: 400;
 
-        &__icon {
+        &--icon {
             font-size: 24px;
             margin-right: 12px;
 
@@ -80,11 +80,15 @@
                 margin-right: 14px;
             }
         }
+    }
 
-        &__text {
-            @media (max-width: 800px){
-                font-size: 20px;
-            }
+    &__phone-text {
+        font-size:  25px;
+        font-weight: 400;
+        color: @true-black;
+
+        @media (max-width: 800px){
+            font-size: 20px;
         }
     }
 
