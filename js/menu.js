@@ -1,7 +1,7 @@
 $(document).ready(function(){
     const openPostfix = '--opened';
     const menu = $('.header__menu');
-    const menuButton = $('.btn-toggle');
+    const menuButton = $('.header__toggle');
 
     menuButton.click(function(){
         if (menu.is(':visible')){

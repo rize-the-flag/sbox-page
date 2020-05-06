@@ -1,83 +1,78 @@
 .overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 999;
-    background-color: #0005;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: #0005;
 }
+
 .popup-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: @white;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+
+  &__close {
+    top: 5px;
+    right: 5px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: @white;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-    
-    &__close {
-        top: 5px;
-        right: 5px;
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        cursor: pointer;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 
-        &:before, &:after {
-            content: "";
-            top: 50%;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            position: absolute;
-            background-color: @main-button-bgc;
-        }
-
-        &:before{
-            transform: rotate(45deg);
-        }
-
-        &:after{
-            transform: rotate(-45deg);
-        }
+    &:before, &:after {
+      content: "";
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      background-color: @main-button-bgc;
     }
-}
 
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
 
 
 .callback-form {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 30px;
-    min-width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  min-width: 400px;
 
-    &__name, &__mail, &__phone {
-        height: 50px;
-        margin: 10px 0 0;
-        border: 1px solid #bdbdbd;
-        padding: 0 8px;
-        color: @lighter-black;
-    }
+  &__name, &__mail, &__phone {
+    height: 50px;
+    margin: 10px 0 0;
+    border: 1px solid #BDBDBD;
+    padding: 0 8px;
+    color: @lighter-black;
+  }
 
-    &__name {
-        margin: 20px 0 0;
-    }
+  &__name {
+    margin: 20px 0 0;
+  }
 
-    @media (max-width: 440px) {
-        min-width: 280px;
-    }
-}
-
-.callback-form__btn {
+  &__button {
     margin-top: 20px;
     align-self: center;
-    .button(100%, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
+    width: 100%;
+    height: 60px;
+  }
 
-    &:hover {
-        transition: 0.15s;
-        background-color: transparent;
-        color: @main-button-bgc;
-    }
-
+  @media (max-width: 440px) {
+    min-width: 280px;
+  }
 }
+

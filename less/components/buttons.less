@@ -1,0 +1,123 @@
+.button {
+  appearance: none;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid @true-black;
+  cursor: pointer;
+  color: @white;
+  transition: all .15s;
+
+  &:hover {
+    transition: all .15s;
+  }
+
+  &--purple {
+    background-color: transparent;
+    color: @light-pink;
+    border-color: @pink;
+
+    &:hover {
+      background-color: @pink;
+      color: @white;
+    }
+  }
+
+  &--orange {
+    background-color: @orange;
+    border-color: @orange;
+
+    &:hover {
+      background-color: transparent;
+      color: @orange;
+    }
+  }
+}
+
+.button-call {
+  &--icon {
+    @media (max-width: 620px) {
+      cursor: pointer;
+      padding: 0;
+      font-size: 0;
+      border: none;
+      background: url(../img/icons/buttons/call-icon.png) center/contain no-repeat;
+    }
+  }
+}
+
+.button-toggle {
+  @first-line-gradient: linear-gradient(13deg, #FF4886 3%, #FF2F96 100%);
+  @second-line-gradient: linear-gradient(13deg, #FF756A 20%, #FF428A 100%);
+  @third-line-gradient: linear-gradient(13deg, #FF8F5A 3%, #FF726C 100%);
+
+  position: relative;
+  width: 45px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  &__lines, &__lines::before, &__lines::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    transition: transform .15s;
+
+    @media (max-width: @small-bp) {
+      height: 2px;
+    }
+  }
+
+  &__lines {
+    background: @first-line-gradient;
+
+    &:after {
+      content: "";
+      top: 26px;
+      left: 0;
+      background: @third-line-gradient;
+    }
+
+    &:before {
+      content: "";
+      top: 13px;
+      left: 0;
+      background: @second-line-gradient;
+    }
+
+    @media (max-width: @small-bp) {
+      &:after {
+        top: 16px;
+      }
+
+      &:before {
+        top: 8px;
+      }
+    }
+  }
+
+  @media (max-width: @small-bp) {
+    width: 24px;
+    height: 18px;
+  }
+
+  &--opened &__lines {
+    height: 0;
+
+    &:after {
+      top: 13px;
+      transform: rotate(45deg);
+
+      @media (max-width: @small-bp) {
+        top: 8px
+      }
+    }
+
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+}
+

@@ -1,231 +1,233 @@
 .footer {
 
-    padding: 83px 0 0;
+  padding: 83px 0 0;
 
-    .fixed-container {
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-        @media (max-width: @medium-bp) {
-            align-content: center;
-        }
-
-        @media (max-width: @small-bp) {
-            flex-wrap: wrap;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-    }
-
-    &__col {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__col:nth-child(2) {
-        margin-left: 7.8%;
-
-        @media (max-width:  @medium-bp) {
-            margin-left: 5.8%;
-        }
-
-        @media (max-width: @small-bp) {
-            margin: 44px 0 0;
-        }
-    }
-
-    &__col:nth-child(3) {
-        margin: -6px 22px 0 0;
-
-        @media (max-width:  @medium-bp) {
-            margin: -6px 0 0;
-        }
-
-        @media (max-width: @small-bp) {
-            margin: 23px 0 0;
-        }
-    }
-
-    .menu {
-        flex-direction: column;
-
-        &__item:not(:last-child) {
-            margin: 0 0 13px;
-
-            @media (max-width: 800px){
-                margin: 0 0 14px;
-            }
-        }
-
-        &__link {
-            font-size: 18px;
-            font-weight: 400;
-
-            @media (max-width: 800px) {
-                font-size: 15px;
-            }
-        }
-    }
-
-    &__phone {
-        display: block;
-        font-weight: 400;
-
-        &--icon {
-            font-size: 24px;
-            margin-right: 12px;
-
-            @media (max-width:  800px) {
-                font-size: 18px;
-                margin-right: 14px;
-            }
-        }
-    }
-
-    &__phone-text {
-        font-size:  25px;
-        font-weight: 400;
-        color: @true-black;
-
-        @media (max-width: 800px){
-            font-size: 20px;
-        }
-    }
-
-    &__mail {
-        margin: 31px 0 0;
-
-        @media (max-width: 800px) {
-            margin: 19px 0 0;
-        }
-    }
-
-    .order-button {
-        .button(248px, 45px, @light-pink, @pink);
-
-        &:hover {
-            transition: all 0.15s;
-            background-color: @pink;
-            color: #FFFFFF;
-        }
-
-        @media (max-width: @small-bp) {
-            display: block;
-            width: 280px;
-            height: 55px;
-        }
-    }
-
-    &__socials {
-        margin: 31px 0 0;
-
-        @media (max-width: @small-bp) {
-            margin: 50px 0 0;
-        }
-    }
+  &__container {
+    justify-content: space-between;
+    flex-wrap: wrap;
 
     @media (max-width: @medium-bp) {
-        padding: 105px 0 0;
+      align-content: center;
     }
 
     @media (max-width: @small-bp) {
-        padding: 46px 0 0;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: flex-start;
     }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__col:nth-child(2) {
+    margin-left: 7.8%;
+
+    @media (max-width: @medium-bp) {
+      margin-left: 5.8%;
+    }
+
+    @media (max-width: @small-bp) {
+      margin: 44px 0 0;
+    }
+  }
+
+  &__col:nth-child(3) {
+    margin: -6px 22px 0 0;
+
+    @media (max-width: @medium-bp) {
+      margin: -6px 0 0;
+    }
+
+    @media (max-width: @small-bp) {
+      margin: 23px 0 0;
+    }
+  }
+
+  .menu {
+    flex-direction: column;
+
+    &__item:not(:last-child) {
+      margin: 0 0 13px;
+
+      @media (max-width: 800px) {
+        margin: 0 0 14px;
+      }
+    }
+
+    &__link {
+      font-size: 18px;
+      font-weight: 400;
+
+      @media (max-width: 800px) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  &__phone {
+    display: block;
+    font-weight: 400;
+
+    &--icon {
+      font-size: 24px;
+      margin-right: 12px;
+
+      @media (max-width: 800px) {
+        font-size: 18px;
+        margin-right: 14px;
+      }
+    }
+  }
+
+  &__phone-text {
+    font-size: 25px;
+    font-weight: 400;
+    color: @true-black;
+
+    @media (max-width: 800px) {
+      font-size: 20px;
+    }
+  }
+
+  &__mail {
+    margin: 31px 0 0;
+
+    @media (max-width: 800px) {
+      margin: 19px 0 0;
+    }
+  }
+
+  .order-button {
+    //    .button(248px, 45px, @light-pink, @pink);
+
+    &:hover {
+      transition: all 0.15s;
+      background-color: @pink;
+      color: #FFFFFF;
+    }
+
+    @media (max-width: @small-bp) {
+      display: block;
+      width: 280px;
+      height: 55px;
+    }
+  }
+
+  &__socials {
+    margin: 38px 0 0;
+
+    @media (max-width: @small-bp) {
+      margin: 50px 0 0;
+    }
+  }
+
+  &__order-button {
+    width: 248px;
+    height: 45px;
+  }
+
+  @media (max-width: @medium-bp) {
+    padding: 105px 0 0;
+  }
+
+  @media (max-width: @small-bp) {
+    padding: 46px 0 0;
+  }
 }
 
 .mail {
-    display: block;
-    color: #000000;
-    font-size: 25px;
-    font-weight: 400;
+  display: block;
+  color: #000000;
+  font-size: 25px;
+  font-weight: 400;
 
-    &__icon {
-        font-size: 24px;
-        margin-right: 12px;
+  &__icon {
+    font-size: 24px;
+    margin-right: 12px;
 
-        @media (max-width: 800px) {
-            font-size: 18px;
-        }
+    @media (max-width: 800px) {
+      font-size: 18px;
     }
+  }
 
-    &__text {
-        @media (max-width: 800px) {
-            font-size: 20px;
-        }
+  &__text {
+    @media (max-width: 800px) {
+      font-size: 20px;
     }
+  }
 }
 
 .icon-phone:before {
-    content: "\e800";
-    .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
+  content: "\e800";
+  .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
 }
 
 .icon-mail:before {
-    content: "\e802";
-    .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
+  content: "\e802";
+  .fontGradient(@footer-icons-txt-color, @footer-icons-default-color);
 }
 
 .socials {
-    display: flex;
+  display: flex;
 
-    &__link {
-        display: block;
-        width: 35px;
-        height: 35px;
-        margin-right: 20px;
+  &__link {
+    display: block;
+    width: 35px;
+    height: 35px;
+    margin-right: 20px;
+  }
+
+  &__icon {
+    display: block;
+    width: 35px;
+    height: 35px;
+
+    &:not(:last-child) {
+      margin-right: 30px;
     }
 
-    &__icon {
-        display: block;
-        width: 35px;
-        height: 35px;
-
-        background: url(../img/icons/socials/socials_sprite.png) no-repeat;
-
-        &:not(:last-child) {
-            margin-right: 20px;
-        }
-
-        &--vk {
-            background-position-x: 0;
-        }
-
-        &--fb {
-            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
-            background-position-x: -55px;
-        }
-
-        &--tw {
-            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
-            background-position-x: -110px;
-        }
-
-        &--insta {
-            //background: url(../img/icons/socials/socials_sprite.png) no-repeat;
-            background-position-x: -165px;
-        }
+    &--vk {
+      .sprite(@vk)
     }
+
+    &--fb {
+      margin-top: -7px;
+      .sprite(@facebook)
+    }
+
+    &--tw {
+      margin-top: -3px;
+      .sprite(@twitter)
+    }
+
+    &--insta {
+      margin-top: -3px;
+      .sprite(@instagram)
+    }
+  }
 }
 
-
 .copyright {
-    display: flex;
-    justify-content: center;
-    background-color: @footer-copyright-bgc;
-    width: 100%;
-    padding: 31px 0;
-    margin: 74px 0 0;
+  display: flex;
+  justify-content: center;
+  background-color: @footer-copyright-bgc;
+  width: 100%;
+  padding: 31px 0;
+  margin: 80px 0 0;
 
-    &__text {
-        color: @white;
-
-        @media (max-width: @small-bp) {
-            font-size: 12px;
-        }
-    }
+  &__text {
+    color: @white;
 
     @media (max-width: @small-bp) {
-        padding: 18px 0;
-        margin: 44px 0 0;
+      font-size: 12px;
     }
+  }
+
+  @media (max-width: @small-bp) {
+    padding: 18px 0;
+    margin: 44px 0 0;
+  }
 }

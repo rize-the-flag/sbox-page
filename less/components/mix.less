@@ -1,29 +1,11 @@
-.button-clean-styles() {
-    appearance: none;
-    border-radius: 0;
-    background-color: transparent;
-    border: none;
-}
-
-.button(@width, @height, @textColor:#000000, @borderColor:#000000,  @bgColor:transparent) {
-    appearance: none;
-    border-radius: 0;
-    color: @textColor;
-    border: 1px solid @borderColor;
-    cursor: pointer;
-    background-color: @bgColor;
-    width: @width;
-    height: @height;
-}
-
 .fontGradient(@gradientRule, @defaultColor) {
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: @defaultColor;
-    background-image: @gradientRule;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: @defaultColor;
+  background-image: @gradientRule;
 }
 
 .calcContainerWidth(@maxWidth, @padding) {
-    max-width: @maxWidth + (@padding * 2);
-    padding: 0 @padding;
+  max-width: @maxWidth + (@padding * 2);
+  padding: 0 @padding;
 }

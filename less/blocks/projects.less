@@ -1,51 +1,44 @@
 @import "../components/slider";
 
 .projects {
-    background-color: @proj-section-bgc;
-    padding: 90px 0 102px;
+  background-color: @proj-section-bgc;
+  padding: 90px 0 102px;
 
-    .fixed-container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  &__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-    &__slider {
-        margin: 100px 0 0;
-
-        @media (max-width: @small-bp) {
-            margin: 43px 0 0;
-        }
-    }
+  &__slider {
+    margin: 100px 0 0;
 
     @media (max-width: @small-bp) {
-        padding: 94px 0 51px;
+      margin: 43px 0 0;
     }
+  }
 
-}
-
-.btn-order {
-    .button(270px, 60px, @main-button-txt-color, @main-button-bgc, @main-button-bgc);
-
+  &__button-order {
     font-size: 18px;
     margin-top: 80px;
-
-    &:hover {
-        transition: 0.15s;
-        background-color: transparent;
-        color: @main-button-bgc;
-    }
+    width: 270px;
+    height: 60px;
 
     @media (max-width: @medium-bp) {
-        width: 320px;
-        height: 68px;
-        margin: 100px 0 0;
+      width: 320px;
+      height: 68px;
+      margin: 100px 0 0;
     }
 
     @media (max-width: @small-bp) {
-        width: 280px;
-        height: 55px;
-        margin: 50px 0 0;
-        font-size: 16px;
+      font-size: 16px;
+      width: 280px;
+      height: 55px;
+      margin: 50px 0 0;
     }
+  }
+
+  @media (max-width: @small-bp) {
+    padding: 94px 0 51px;
+  }
 }
