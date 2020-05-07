@@ -6,14 +6,14 @@ $(document).ready(function(){
     menuButton.click(function(){
         if (menu.is(':visible')){
             menu.slideUp(300,()=>{
-                menuButton.removeClass('btn-toggle' + openPostfix);
+                menuButton.removeClass('button-toggle' + openPostfix);
                 menu.css({'display': ''})
                 menu.removeClass('header__menu--opened');
             });
         }
         else {
             menu.slideDown(300,()=>{
-                menuButton.addClass('btn-toggle' + openPostfix);
+                menuButton.addClass('button-toggle' + openPostfix);
                 menu.css({'display': ''})
                 menu.addClass('header__menu--opened');
             });
