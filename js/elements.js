@@ -1,3 +1,3 @@
-$( document ).ready( function (){
-    $('.elements').addClass('elements--active');
-})
+$( document ).ready( function () {
+  $( '.elements' ).addClass( 'elements--active' );
+} );
