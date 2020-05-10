@@ -8,6 +8,8 @@
   <link rel="stylesheet" href="build/css/style.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="build/js/elements.min.js"></script>
+  <script src="build/js/swiper.min.js"></script>
+  <script src="build/js/swiper_cfg.min.js"></script>
   <script src="build/js/slider.min.js"></script>
   <script src="build/js/menu.min.js"></script>
   <script src="build/js/popup.min.js"></script>
@@ -75,23 +77,23 @@
       <h2 class="title about__title">
         Что я делаю
       </h2>
-      <ul class="about__list">
-        <li class="about__item ">
+      <ul class="about__list ">
+        <li class="about__item about__text">
           <i class="about__pic about__pic--1"></i>
-          <a class="about__text">Вёрстка лендинг–страниц
-            и&nbsp;сайтов любой сложности</a>
+          Вёрстка лендинг–страниц
+          и&nbsp;сайтов любой сложности
         </li>
-        <li class="about__item">
+        <li class="about__item about__text">
           <i class="about__pic about__pic--2"></i>
-          <a class="about__text">Адаптивная вёрстка под все браузеры и устройства</a>
+          Адаптивная вёрстка под все браузеры и устройства
         </li>
-        <li class="about__item">
+        <li class="about__item about__text">
           <i class="about__pic about__pic--3"></i>
-          <a class="about__text">Frontend – разработка и&nbsp;программирование</a>
+          Frontend – разработка и&nbsp;программирование
         </li>
-        <li class="about__item">
+        <li class="about__item about__text">
           <i class="about__pic about__pic--4"></i>
-          <a class="about__text">Исправление и доработка существующей вёрстки</a>
+          Исправление и доработка существующей вёрстки
         </li>
       </ul>
       <button class="about__button-cost button button--orange button--large"
@@ -123,27 +125,9 @@
               <span class="slider__text">Сайт магазина «Рыболов»</span>
             </a>
           </li>
-          <li class="slider__item">
-            <a href="#" class="slider__link">
-              <img src="./build/img/slider/slider_item_1.jpg" alt="site preview" class="slider__image">
-              <span class="slider__text">Сайт психолога Веры Антоновой</span>
-            </a>
-          </li>
-          <li class="slider__item">
-            <a href="#" class="slider__link">
-              <img src="./build/img/slider/slider_item_2.jpg" alt="site preview" class="slider__image">
-              <span class="slider__text">Интернет-магазин детской одежды</span>
-            </a>
-          </li>
-          <li class="slider__item">
-            <a href="#" class="slider__link">
-              <img src="./build/img/slider/slider_item_3.jpg" alt="site preview" class="slider__image">
-              <span class="slider__text">Сайт магазина «Рыболов»</span>
-            </a>
-          </li>
         </ul>
-        <div class="slider__arrow slider__arrow--left"></div>
-        <div class="slider__arrow slider__arrow--right"></div>
+        <button class="button slider__arrow slider__arrow--left"></button>
+        <button class="button slider__arrow slider__arrow--right"></button>
         <div class="item-control slider__item-control"></div>
       </div>
       <button class="projects__button-order button button--orange"

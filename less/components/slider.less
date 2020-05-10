@@ -11,33 +11,38 @@
 
   width: 100%;
   position: relative;
+  overflow: hidden;
+  box-sizing: content-box;
+  padding: 0 30px;
 
   &__view-area {
     display: flex;
-    overflow: hidden;
+    //overflow: hidden;
   }
 
   &__item {
-    flex: 0 0 calc((100% / @itemCount) - (@itemMarginRight * (@itemCount - 1)) / @itemCount);
-    margin-right: @itemMarginRight;
+    flex: 0 0 calc((100% / @itemCount) - (@itemMarginRight * (@itemCount - 1)) / @itemCount + 0.1px);
     overflow: hidden;
     transition: transform 0.5s;
+    //margin-right: @itemMarginRight;
 
+    /*
     &:last-child {
       margin-right: 0;
     }
+    */
 
-    @media (max-width: @medium-bp) {
+    @media (max-width: 1070px) {
       flex: 0 0 calc((100% / @itemCountMediumScreen) - (@itemMarginRightMediumScreen * (@itemCountMediumScreen - 1)) / @itemCountMediumScreen);
-      margin-right: @itemMarginRightMediumScreen;
+      // margin-right: @itemMarginRightMediumScreen;
     }
 
-    @media (max-width: @small-bp) {
+    @media (max-width: 460px) {
       flex: 0 0 calc((100% / @itemCountSmallScreen) - (@itemMarginRightSmallScreen * (@itemCountSmallScreen - 1)) / @itemCountSmallScreen);
-      margin-right: @itemMarginRightSmallScreen;
+      //margin-right: @itemMarginRightSmallScreen;
     }
     @media (max-width: 320px) {
-      transform: translateX(-290px);
+      // transform: translateX(-290px);
     }
   }
 
@@ -54,7 +59,7 @@
       line-height: 48px;
     }
 
-    @media (max-width: @small-bp) {
+    @media (max-width: 780px) {
       font-size: 18px;
       line-height: 33px;
     }
@@ -87,6 +92,7 @@
     width: 60px;
     height: 60px;
     top: 41.47%;
+    border: none;
     transform: translateY(-50%);
     background: url(../img/slider/controls/arrow.png) center/cover no-repeat;
     cursor: pointer;
@@ -94,11 +100,11 @@
     z-index: 99;
 
     &--left {
-      left: -30px;
+      left: 0;
     }
 
     &--right {
-      right: -30px;
+      right: 0;
       transform: rotate(180deg);
       transform-origin: 50% 25%;
     }
@@ -120,6 +126,11 @@
       margin: 5px 0 0;
     }
   }
+
+  @media (max-width: @medium-bp) {
+    padding: 0;
+  }
+
 }
 
 .item-control {

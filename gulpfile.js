@@ -25,7 +25,7 @@ function compileCss() {
   return gulp.src( './less/style.less' )
     .pipe( srcMap.init() )
     .pipe( less() ).on( 'error', notify.onError() )
-    /*.pipe( cssmin() )*/
+    .pipe( cssmin() )
     .pipe( autoprefixer( {
       cascade: false,
     } ) )
@@ -33,15 +33,15 @@ function compileCss() {
     .pipe( srcMap.write( '.' ) )
     .pipe( gulp.dest( './build/css' ) )
     .pipe( browserSync.stream() );
-};
+}
 
 function compileJs() {
-  return gulp.src( './js/**/*.js' )
+  return gulp.src( ['./js/**/*.js', './node_modules/swiper/js/swiper.js' ])
     .pipe( jsmin() )
     .pipe( rename( { suffix: '.min' } ) )
     .pipe( gulp.dest( './build/js/' ) )
     .pipe( browserSync.stream() );
-};
+}
 
 function clear( done ) {
   del.sync( [ 'build/*' ] );
