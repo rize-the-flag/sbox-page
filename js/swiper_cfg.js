@@ -11,6 +11,10 @@ $( document ).ready( function () {
       prevEl: '.slider__arrow--left',
     },
 
+    autoplay: {
+      delay: 3000,
+    },
+
     pagination: {
       el: '.slider__item-control',
       type: 'bullets',
