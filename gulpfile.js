@@ -56,7 +56,7 @@ function makeSprites() {
       cssName: 'sprite.less',
       cssFormat: 'less',
       // cssOpts:{functions: false},
-      algorithm: 'left-right',
+      // algorithm: 'left-right',
       algorithmOpts: {
         sort: false
       }
