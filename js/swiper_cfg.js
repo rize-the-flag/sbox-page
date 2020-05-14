@@ -11,9 +11,7 @@ $( document ).ready( function () {
       prevEl: '.slider__arrow--left',
     },
 
-    autoplay: {
-      delay: 3000,
-    },
+    autoplay: true,
 
     pagination: {
       el: '.slider__item-control',
