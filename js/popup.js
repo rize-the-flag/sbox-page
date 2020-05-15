@@ -1,11 +1,11 @@
 $( document ).ready( function () {
-  let callbackFormFull = `
+  const callbackFormFull = `
         <div class="popup-window__close"></div>
         <form class="callback-form" action="" method="post">
-            <input class="callback-form__name" type="text" placeholder="Введите ваше имя">
-            <input class="callback-form__mail" type="email" placeholder="Введите ваш e-mail">
-            <input class="callback-form__phone" type="text" placeholder="Введите ваш телефон">
-            <input type="button" class="callback-form__button button button--orange" value="Отправить">
+            <input class="callback-form__name" type="text" placeholder="Введите ваше имя" required>
+            <input class="callback-form__mail" type="email" placeholder="Введите ваш e-mail" required>
+            <input class="callback-form__phone" type="text" placeholder="Введите ваш телефон" required>
+            <input type="submit" class="callback-form__button button button--orange" value="Отправить">
         </form>
     `;
 
@@ -26,11 +26,16 @@ $( document ).ready( function () {
 
   function showModal( target, formType ) {
     let popup = $( target ).children( '.popup-window' );
+
     popup.html( callbackFormFull );
 
     if ( formType === 'short' ) {
-      popup.find( '.callback-form__mail' ).css( 'display', 'none' );
+      const callbackMail = popup.find( '.callback-form__mail' );
+      callbackMail.css( 'display', 'none' );
+      callbackMail.removeAttr( 'required' );
     }
+
+
 
     $( target ).fadeIn();
     $( 'body' ).addClass( 'modal-open' );

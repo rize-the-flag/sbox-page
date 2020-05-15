@@ -55,9 +55,16 @@
   &__name, &__mail, &__phone {
     height: 50px;
     margin: 10px 0 0;
-    border: 1px solid #BDBDBD;
     padding: 0 8px;
     color: @lighter-black;
+
+    &:valid {
+      outline: 1px solid #2fffae;
+    }
+
+    &:invalid {
+      outline: 1px solid red;
+    }
   }
 
   &__name {

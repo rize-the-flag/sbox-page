@@ -81,6 +81,11 @@
     font-weight: 400;
     color: @true-black;
 
+    &:hover,
+    &:focus {
+      color: @link-hovered;
+    }
+
     &:not(:last-child) {
       margin-bottom: 31px;
 
@@ -156,6 +161,11 @@
 
   &__icon {
     display: block;
+
+    &:hover,
+    &:focus {
+      transform: scale(1.2)
+    }
 
     &--vk {
       .sprite(@vk)

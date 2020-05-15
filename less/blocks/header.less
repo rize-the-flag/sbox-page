@@ -57,6 +57,11 @@
     color: @middle-black;
     margin-right: 29px;
 
+    &:hover,
+    &:focus {
+      color: @link-hovered;
+    }
+
     @media (max-width: @small-bp) {
       font-size: 18px;
       margin-right: 0;
@@ -91,7 +96,9 @@
     font-weight: 400;
     color: @middle-black;
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       transition: color 0.15s;
       color: @link-hovered;
       padding-bottom: 1px;

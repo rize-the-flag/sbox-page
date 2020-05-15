@@ -11,9 +11,12 @@
 
   width: 100%;
   position: relative;
-  overflow: hidden;
-  box-sizing: content-box;
-  padding: 0 30px;
+
+  &__content-outer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
 
   &__view-area {
     display: flex;
@@ -46,6 +49,11 @@
     line-height: 54px;
     color: @slider-link-font-color;
 
+    &:hover,
+    &:focus {
+      color: @link-hovered;
+    }
+
     @media (max-width: @medium-bp) {
       font-size: 25px;
       font-weight: 500;
@@ -58,7 +66,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .slider__arrow {
       opacity: 1;
       transition: all 0.2s;
@@ -92,12 +101,17 @@
     opacity: 0.15;
     z-index: 99;
 
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
     &--left {
-      left: 0;
+      left: -30px;
     }
 
     &--right {
-      right: 0;
+      right: -30px;
       transform: rotate(180deg);
       transform-origin: 50% 25%;
     }
@@ -141,7 +155,9 @@
       margin: 0 30px 0 0;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       transition: background-color .15s;
       background-color: @slider-dot-active;
     }

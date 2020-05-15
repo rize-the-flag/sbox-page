@@ -1,6 +1,6 @@
 $( document ).ready( function () {
-  const slider = new Swiper( '.projects__slider', {
-    loop: true,
+  const slider = new Swiper( '.slider__content-outer', {
+    loop: false,
     slidesPerView: 3,
     wrapperClass: 'slider__view-area',
     slideClass: 'slider__item',
