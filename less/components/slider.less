@@ -20,7 +20,6 @@
 
   &__view-area {
     display: flex;
-    //overflow: hidden;
   }
 
   &__item {
@@ -30,15 +29,10 @@
 
     @media (max-width: 1070px) {
       flex: 0 0 calc((100% / @itemCountMediumScreen) - (@itemMarginRightMediumScreen * (@itemCountMediumScreen - 1)) / @itemCountMediumScreen);
-      // margin-right: @itemMarginRightMediumScreen;
     }
 
     @media (max-width: 460px) {
       flex: 0 0 calc((100% / @itemCountSmallScreen) - (@itemMarginRightSmallScreen * (@itemCountSmallScreen - 1)) / @itemCountSmallScreen);
-      //margin-right: @itemMarginRightSmallScreen;
-    }
-    @media (max-width: 320px) {
-      // transform: translateX(-290px);
     }
   }
 
