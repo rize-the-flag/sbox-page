@@ -1,10 +1,10 @@
 $( document ).ready( function () {
   const callbackFormFull = `
         <div class="popup-window__close"></div>
-        <form class="callback-form" action="" method="post">
-            <input class="callback-form__name" type="text" placeholder="Введите ваше имя" required>
-            <input class="callback-form__mail" type="email" placeholder="Введите ваш e-mail" required>
-            <input class="callback-form__phone" type="text" placeholder="Введите ваш телефон" required>
+        <form class="callback-form" id="callback-form" action="/" method="post">
+            <input class="callback-form__name" name="name" type="text" placeholder="Введите ваше имя">
+            <input class="callback-form__mail" name="email" type="email" placeholder="Введите ваш e-mail">
+            <input class="callback-form__phone js-phone-mask" name="phone" type="text" placeholder="Введите ваш телефон">
             <input type="submit" class="callback-form__button button button--orange" value="Отправить">
         </form>
     `;
@@ -24,6 +24,7 @@ $( document ).ready( function () {
     document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
   } );
 
+
   function showModal( target, formType ) {
     let popup = $( target ).children( '.popup-window' );
 
@@ -32,12 +33,42 @@ $( document ).ready( function () {
     if ( formType === 'short' ) {
       const callbackMail = popup.find( '.callback-form__mail' );
       callbackMail.css( 'display', 'none' );
-      callbackMail.removeAttr( 'required' );
     }
 
-
-
     $( target ).fadeIn();
+
+    $.validator.addMethod( 'phoneValid',  value => {
+      return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/.test( value );
+    } );
+
+    $( '.js-phone-mask' ).mask( '+7(999)999-9999', {
+      placeholder: '_',
+    } );
+
+    $( '.callback-form' ).validate( {
+      autoclear: false,
+      rules: {
+        name: 'required',
+        phone: {
+          phoneValid: true,
+        },
+        email: {
+          required: true,
+          email: true,
+        }
+      },
+      messages: {
+        name: 'Введите ваше имя!',
+        phone: {
+          phoneValid: 'Введите ваш телефон!',
+        },
+        email: {
+          required: 'Введите ваш e-mail!',
+          email: 'e-mail адресс должен быть в формате example@example.ru',
+        }
+      }
+    } );
+
     $( 'body' ).addClass( 'modal-open' );
 
     document.addEventListener( 'wheel', disableWheel, { passive: false } );
@@ -47,7 +78,7 @@ $( document ).ready( function () {
   }
 
   function disableArrows( e ) {
-    const blocklist = [ 'ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight' ];
+    const blocklist = [ 'ArrowDown', 'ArrowUp' ];
     if ( blocklist.indexOf( e.code ) >= 0 ) {
       e.preventDefault();
       e.stopPropagation();

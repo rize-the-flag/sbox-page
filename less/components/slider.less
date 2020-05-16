@@ -64,7 +64,6 @@
   &:focus {
     .slider__arrow {
       opacity: 1;
-      transition: all 0.2s;
       border-radius: 50%;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
     }
@@ -94,6 +93,7 @@
     cursor: pointer;
     opacity: 0.15;
     z-index: 99;
+    transition: opacity 0.2s;
 
     &:hover,
     &:focus {
@@ -144,6 +144,7 @@
     border-right: 1px solid @slider-dot-color;
     background-color: @slider-dot-color;
     cursor: pointer;
+    transition: background-color .15s;
 
     &:not(:last-child) {
       margin: 0 30px 0 0;
@@ -152,7 +153,6 @@
     &:hover,
     &:focus {
       outline: none;
-      transition: background-color .15s;
       background-color: @slider-dot-active;
     }
 

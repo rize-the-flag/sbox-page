@@ -25,8 +25,12 @@
 
     &:hover,
     &:focus {
-      transform: scale(1.15);
-      //  transition: transform 0.2s ease;
+      @media (min-width: 1200px) {
+        transform: scale(1.15);
+      }
+      @media (max-width: 1199px) {
+        transform: scale(1.05);
+      }
     }
   }
 

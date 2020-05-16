@@ -58,13 +58,16 @@
     padding: 0 8px;
     color: @lighter-black;
 
-    &:valid {
-      outline: 1px solid #2fffae;
+    &.error {
+      border: 1px solid red;
     }
+  }
 
-    &:invalid {
-      outline: 1px solid red;
-    }
+  label.error {
+    font-size: 12px;
+    color: red;
+    margin-top: 5px;
+    margin-left: 5px;
   }
 
   &__name {
