@@ -46,19 +46,6 @@ $( document ).ready( function () {
       placeholder: '_',
     } );
 
-    $( '.callback-form' ).on( 'submit', ( e ) => {
-      e.preventDefault();
-      $( '.callback-form' ).css( 'display', 'none' );
-      $( '.js-msg-container' ).html( `Спасибо ${$( '.callback-form__name' ).val()}! Ваша&nbsp;заявка&nbsp;принята` );
-      $( '.js-msg-container' ).css( 'display', 'block' );
-
-      setTimeout( () => {
-        $( '.overlay' ).fadeOut( 1500 );
-        document.removeEventListener( 'wheel', disableWheel );
-        document.removeEventListener( 'keydown', disableArrows );
-        document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
-      }, 1000 );
-    } );
 
     $( '.callback-form' ).validate( {
       autoclear: false,
@@ -81,6 +68,18 @@ $( document ).ready( function () {
           required: 'Введите ваш e-mail!',
           email: 'e-mail адресс должен быть в формате example@example.ru',
         }
+      },
+      submitHandler: function ( form ) {
+        $( '.callback-form' ).css( 'display', 'none' );
+        $( '.js-msg-container' ).html( `Спасибо ${$( '.callback-form__name' ).val()}! Ваша&nbsp;заявка&nbsp;принята` );
+        $( '.js-msg-container' ).css( 'display', 'block' );
+
+        setTimeout( () => {
+          $( '.overlay' ).fadeOut( 1500 );
+          document.removeEventListener( 'wheel', disableWheel );
+          document.removeEventListener( 'keydown', disableArrows );
+          document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
+        }, 1000 );
       }
     } );
 
