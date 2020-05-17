@@ -1,11 +1,12 @@
 $( document ).ready( function () {
   const callbackFormFull = `
         <div class="popup-window__close"></div>
+        <div class="js-msg-container"></div>
         <form class="callback-form" id="callback-form" action="/" method="post">
             <input class="callback-form__name" name="name" type="text" placeholder="Введите ваше имя">
             <input class="callback-form__mail" name="email" type="email" placeholder="Введите ваш e-mail">
             <input class="callback-form__phone js-phone-mask" name="phone" type="text" placeholder="Введите ваш телефон">
-            <input type="submit" class="callback-form__button button button--orange" value="Отправить">
+            <input type="submit" class="callback-form__button button button--orange js-submit" value="Отправить">
         </form>
     `;
 
@@ -18,10 +19,6 @@ $( document ).ready( function () {
 
   $( '.popup-window' ).on( 'click', '.popup-window__close', ( evt ) => {
     $( evt.target ).closest( '.overlay' ).fadeOut();
-    $( 'body' ).removeClass( 'modal-open' );
-    document.removeEventListener( 'wheel', disableWheel );
-    document.removeEventListener( 'keydown', disableArrows );
-    document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
   } );
 
 
@@ -37,13 +34,14 @@ $( document ).ready( function () {
 
     $( target ).fadeIn();
 
-    $.validator.addMethod( 'phoneValid',  value => {
+    $.validator.addMethod( 'phoneValid', value => {
       return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/.test( value );
     } );
 
     $( '.js-phone-mask' ).mask( '+7(999)999-9999', {
       placeholder: '_',
     } );
+
 
     $( '.callback-form' ).validate( {
       autoclear: false,
@@ -66,36 +64,16 @@ $( document ).ready( function () {
           required: 'Введите ваш e-mail!',
           email: 'e-mail адресс должен быть в формате example@example.ru',
         }
+      },
+      submitHandler: function ( form ) {
+        $( '.callback-form' ).css( 'display', 'none' );
+        $( '.js-msg-container' ).html( `Спасибо ${$( '.callback-form__name' ).val()}! Ваша&nbsp;заявка&nbsp;принята` );
+        $( '.js-msg-container' ).css( 'display', 'block' );
+
+        setTimeout( () => {
+          $( '.overlay' ).fadeOut( 1500 );
+        }, 1000 );
       }
     } );
-
-    $( 'body' ).addClass( 'modal-open' );
-
-    document.addEventListener( 'wheel', disableWheel, { passive: false } );
-    document.addEventListener( 'keydown', disableArrows, { passive: false } );
-    document.addEventListener( 'mousedown', disableMiddleMouseBtn, { passive: false } );
-
   }
-
-  function disableArrows( e ) {
-    const blocklist = [ 'ArrowDown', 'ArrowUp' ];
-    if ( blocklist.indexOf( e.code ) >= 0 ) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }
-
-  function disableWheel( e ) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-
-  function disableMiddleMouseBtn( e ) {
-    let middleMouseBtn = 1;
-    if ( e.button === middleMouseBtn ) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }
-
 } );
