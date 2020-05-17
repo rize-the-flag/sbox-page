@@ -19,10 +19,6 @@ $( document ).ready( function () {
 
   $( '.popup-window' ).on( 'click', '.popup-window__close', ( evt ) => {
     $( evt.target ).closest( '.overlay' ).fadeOut();
-    $( 'body' ).removeClass( 'modal-open' );
-    document.removeEventListener( 'wheel', disableWheel );
-    document.removeEventListener( 'keydown', disableArrows );
-    document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
   } );
 
 
@@ -76,40 +72,8 @@ $( document ).ready( function () {
 
         setTimeout( () => {
           $( '.overlay' ).fadeOut( 1500 );
-          document.removeEventListener( 'wheel', disableWheel );
-          document.removeEventListener( 'keydown', disableArrows );
-          document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
         }, 1000 );
       }
     } );
-
-    $( 'body' ).addClass( 'modal-open' );
-
-    document.addEventListener( 'wheel', disableWheel, { passive: false } );
-    document.addEventListener( 'keydown', disableArrows, { passive: false } );
-    document.addEventListener( 'mousedown', disableMiddleMouseBtn, { passive: false } );
-
   }
-
-  function disableArrows( e ) {
-    const blocklist = [ 'ArrowDown', 'ArrowUp' ];
-    if ( blocklist.indexOf( e.code ) >= 0 ) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }
-
-  function disableWheel( e ) {
-    e.preventDefault();
-    e.stopPropagation();
-  }
-
-  function disableMiddleMouseBtn( e ) {
-    const MIDDLE_MOUSE_BTN = 1;
-    if ( e.button === MIDDLE_MOUSE_BTN ) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-  }
-
 } );
