@@ -1,11 +1,12 @@
 $( document ).ready( function () {
   const callbackFormFull = `
         <div class="popup-window__close"></div>
+        <div class="js-msg-container"></div>
         <form class="callback-form" id="callback-form" action="/" method="post">
             <input class="callback-form__name" name="name" type="text" placeholder="Введите ваше имя">
             <input class="callback-form__mail" name="email" type="email" placeholder="Введите ваш e-mail">
             <input class="callback-form__phone js-phone-mask" name="phone" type="text" placeholder="Введите ваш телефон">
-            <input type="submit" class="callback-form__button button button--orange" value="Отправить">
+            <input type="submit" class="callback-form__button button button--orange js-submit" value="Отправить">
         </form>
     `;
 
@@ -37,12 +38,23 @@ $( document ).ready( function () {
 
     $( target ).fadeIn();
 
-    $.validator.addMethod( 'phoneValid',  value => {
+    $.validator.addMethod( 'phoneValid', value => {
       return /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){11}(\s*)?$/.test( value );
     } );
 
     $( '.js-phone-mask' ).mask( '+7(999)999-9999', {
       placeholder: '_',
+    } );
+
+    $( '.callback-form' ).on( 'submit', ( e ) => {
+      e.preventDefault();
+      $( '.callback-form' ).css( 'display', 'none' );
+      $( '.js-msg-container' ).html( `Спасибо ${$( '.callback-form__name' ).val()}! Ваша&nbsp;заявка&nbsp;принята` );
+      $( '.js-msg-container' ).css( 'display', 'block' );
+
+      setTimeout( () => {
+        $( '.overlay' ).fadeOut( 1500 );
+      }, 1000 );
     } );
 
     $( '.callback-form' ).validate( {
@@ -91,8 +103,8 @@ $( document ).ready( function () {
   }
 
   function disableMiddleMouseBtn( e ) {
-    let middleMouseBtn = 1;
-    if ( e.button === middleMouseBtn ) {
+    const MIDDLE_MOUSE_BTN = 1;
+    if ( e.button === MIDDLE_MOUSE_BTN ) {
       e.preventDefault();
       e.stopPropagation();
     }
