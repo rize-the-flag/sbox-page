@@ -54,6 +54,9 @@ $( document ).ready( function () {
 
       setTimeout( () => {
         $( '.overlay' ).fadeOut( 1500 );
+        document.removeEventListener( 'wheel', disableWheel );
+        document.removeEventListener( 'keydown', disableArrows );
+        document.removeEventListener( 'mousedown', disableMiddleMouseBtn );
       }, 1000 );
     } );
 
